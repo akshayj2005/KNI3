@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Plan Your Journey - KNI Global Tours</title>
+    <meta name="description" content="Get in touch with our travel experts to plan your bespoke journey to Japan or India.">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="bg-dark text-white overflow-x-hidden">
+
+    <!-- Header (Same as index.html) -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <a href="index.html" class="flex items-center gap-3">
+                    <svg class="w-10 h-10 torii-gate" viewBox="0 0 50 50" fill="none">
+                        <path d="M10 45V20M40 45V20M5 20H45M8 15H42M15 20V12M35 20V12M15 12H35" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                    <div>
+                        <span class="font-display text-2xl font-bold tracking-tight text-primary">KNI Global</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-10">
+                    <a href="index.html" class="nav-link font-medium text-sm tracking-wide">Home</a>
+                    <a href="about.html" class="nav-link font-medium text-sm tracking-wide">About Us</a>
+                    <a href="packages.html" class="nav-link font-medium text-sm tracking-wide">Holiday Packages</a>
+                    <a href="themes.html" class="nav-link font-medium text-sm tracking-wide">Themes</a>
+                    <a href="blogs.html" class="nav-link font-medium text-sm tracking-wide">Travel Stories</a>
+                    <a href="contact.html" class="nav-link active font-medium text-sm tracking-wide">Contact</a>
+                </nav>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 relative overflow-hidden">
+        <!-- Floating Blur Elements -->
+        <div class="absolute top-1/2 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -translate-x-1/2"></div>
+        
+        <section class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Personal Concierge</span>
+                    <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">Let's Design Your <span class="italic text-primary">Legacy Trip</span></h1>
+                    <p class="text-xl opacity-60 font-light max-w-2xl mx-auto">Tell us about your dreams, and our curators will craft the path. Private, luxury, and entirely bespoke.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-5 gap-16">
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-3">
+                        <div class="glass p-10 md:p-12 rounded-[50px] border border-white/5 relative shadow-2xl">
+                            <form id="contact-form" class="space-y-8" onsubmit="handleContactSubmit(event)">
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div class="space-y-3">
+                                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 ml-1">Your Full Name</label>
+                                        <input type="text" placeholder="John Traveler" required class="w-full search-input rounded-2xl px-6 py-5 focus:ring-primary/20 bg-surface/30">
+                                    </div>
+                                    <div class="space-y-3">
+                                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 ml-1">Email Address</label>
+                                        <input type="email" placeholder="john@example.com" required class="w-full search-input rounded-2xl px-6 py-5 bg-surface/30">
+                                    </div>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div class="space-y-3">
+                                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 ml-1">Selection Destination</label>
+                                        <select id="contact-dest" class="w-full search-input rounded-2xl px-6 py-5 bg-surface/30 appearance-none">
+                                            <option value="japan">🇯🇵 Japan Expedition</option>
+                                            <option value="india">🇮🇳 India Odyssey</option>
+                                            <option value="both">🌏 Dual Region Discovery</option>
+                                        </select>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 ml-1">Expected Travelers</label>
+                                        <select class="w-full search-input rounded-2xl px-6 py-5 bg-surface/30 appearance-none">
+                                            <option>Solo Voyager</option>
+                                            <option>Duo / Couple</option>
+                                            <option>Family (3-5)</option>
+                                            <option>Private Group (6+)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 ml-1">Specific Visions or Requirements</label>
+                                    <textarea placeholder="Tell us what excites you about this journey..." rows="5" class="w-full search-input rounded-3xl px-6 py-5 bg-surface/30 resize-none"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full py-6 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl shadow-primary/20" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: #0f1419;">
+                                    Initialize Inquiry
+                                </button>
+                            </form>
+
+                            <!-- Success State -->
+                            <div id="form-success" class="hidden text-center py-20 animate-fade-in-up">
+                                <div class="w-24 h-24 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center text-5xl mx-auto mb-8 border border-emerald-500/20 shadow-2xl">✓</div>
+                                <h3 class="font-display text-4xl font-bold mb-4">Transmission Successful</h3>
+                                <p class="text-xl opacity-60 font-light">A personal curator will be in touch within 12 hours to begin the alchemy of your trip.</p>
+                                <a href="index.html" class="inline-block mt-10 text-primary font-bold hover:border-b border-primary transition-all">Return to Home</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div class="lg:col-span-2 space-y-12">
+                        <div class="glass p-10 rounded-[40px] border border-white/5 space-y-10">
+                            <div>
+                                <h4 class="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-6">Direct Channels</h4>
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4 group cursor-pointer">
+                                        <div class="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-dark transition-all">📧</div>
+                                        <span class="opacity-60 text-lg">concierge@kniglobal.com</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 group cursor-pointer">
+                                        <div class="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-dark transition-all">📞</div>
+                                        <span class="opacity-60 text-lg">+1 234 567 LUXE</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-6">Our Principal Offices</h4>
+                                <div class="space-y-6 opacity-60 font-light">
+                                    <p><span class="text-primary font-bold mr-2">TOKYO:</span> Shibuya Building 5F, Minato-ku</p>
+                                    <p><span class="text-primary font-bold mr-2">DELHI:</span> Block A, Connaught Place</p>
+                                    <p><span class="text-primary font-bold mr-2">LONDON:</span> 42 Mayfair, W1K</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-[40px] overflow-hidden shadow-2xl relative h-80 group">
+                            <img src="assets/images/india_hero.png" class="absolute inset-0 w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" alt="Office">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                                <span class="text-4xl mb-4">✨</span>
+                                <h5 class="font-display text-2xl font-bold">24/7 Global Concierge</h5>
+                                <p class="text-sm opacity-70 mt-4 leading-relaxed font-light">Available across all timezones to ensure seamless transitions during your travels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-16 border-t border-white/5 text-center opacity-30 text-[10px] uppercase tracking-[0.4em]">
+        © 2025 KNI Global Tours. Luxury Travel Reimagined.
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script>
+        // Set package from URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageId = urlParams.get('package');
+            if (packageId) {
+                const destSelect = document.getElementById('contact-dest');
+                if (packageId.includes('japan')) destSelect.value = 'japan';
+                if (packageId.includes('india')) destSelect.value = 'india';
+                
+                // Add a hidden field or message about the specific package
+                const visionArea = document.querySelector('textarea');
+                visionArea.placeholder = `I am interested in the ${packageId.replace(/-/g, ' ')} package...`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Our Story - KNI Global Tours</title>
+    <meta name="description" content="Learn about our mission to connect travelers with the extraordinary cultures of Japan and India since 2009.">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="bg-dark text-white overflow-x-hidden">
+
+    <!-- Header (Same as index.html) -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <a href="index.html" class="flex items-center gap-3">
+                    <svg class="w-10 h-10 torii-gate" viewBox="0 0 50 50" fill="none">
+                        <path d="M10 45V20M40 45V20M5 20H45M8 15H42M15 20V12M35 20V12M15 12H35" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                    <div>
+                        <span class="font-display text-2xl font-bold tracking-tight text-primary">KNI Global</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-10">
+                    <a href="index.html" class="nav-link font-medium text-sm tracking-wide">Home</a>
+                    <a href="about.html" class="nav-link active font-medium text-sm tracking-wide">About Us</a>
+                    <a href="packages.html" class="nav-link font-medium text-sm tracking-wide">Holiday Packages</a>
+                    <a href="themes.html" class="nav-link font-medium text-sm tracking-wide">Themes</a>
+                    <a href="blogs.html" class="nav-link font-medium text-sm tracking-wide">Travel Stories</a>
+                    <a href="contact.html" class="nav-link font-medium text-sm tracking-wide">Contact</a>
+                </nav>
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: #0f1419;">
+                        Plan Your Trip
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-[80px] z-40 bg-dark/95 backdrop-blur-xl">
+            <div class="px-6 py-12 space-y-6 flex flex-col items-center">
+                <a href="index.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">About Us</a>
+                <a href="packages.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Holiday Packages</a>
+                <a href="themes.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Themes</a>
+                <a href="blogs.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Travel Stories</a>
+                <a href="contact.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <section class="container mx-auto px-6">
+            <div class="text-center mb-24 max-w-4xl mx-auto">
+                <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Since 2009</span>
+                <h1 class="font-display text-5xl md:text-7xl font-bold mb-8 leading-tight">Crafting Memories <br><span class="italic text-primary">Through Travel</span></h1>
+                <p class="text-xl md:text-2xl opacity-70 font-light leading-relaxed">
+                    We believe travel is more than just seeing places—it's about the connections we make, the cultures we share, and the perspective we gain. 
+                </p>
+            </div>
+
+            <!-- Story Grid -->
+            <div class="grid lg:grid-cols-2 gap-20 items-center mb-32">
+                <div class="relative order-2 lg:order-1">
+                    <div class="rounded-[40px] overflow-hidden shadow-2xl">
+                        <img src="assets/images/japan_alps.png" class="w-full h-[600px] object-cover" alt="Our Journey">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 glass p-8 rounded-3xl hidden md:block max-w-xs border border-primary/20 shadow-2xl">
+                        <p class="font-display text-2xl font-bold text-primary mb-2">15+ Years</p>
+                        <p class="text-sm opacity-60">Delivering exceptional travel experiences across two legendary regions.</p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 space-y-8">
+                    <h2 class="font-display text-4xl font-bold">Bridging <span class="text-primary italic">Cultures</span></h2>
+                    <p class="text-lg opacity-70 font-light leading-relaxed">
+                        Founded by a team of travel enthusiasts with deep roots in both Japan and India, KNI Global Tours was born from a desire to showcase the authentic, often-overlooked beauty of these two nations. 
+                    </p>
+                    <p class="text-lg opacity-70 font-light leading-relaxed">
+                        From the silent temples of Kyoto to the bustling bazaars of Delhi, our native experts ensure you don't just visit—you experience. We handle every detail, so you can focus on the moments that matter.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                        <div>
+                            <p class="text-4xl font-bold text-primary mb-2">50K+</p>
+                            <p class="text-xs uppercase tracking-widest opacity-40 font-bold">Happy Travelers</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-primary mb-2">200+</p>
+                            <p class="text-xs uppercase tracking-widest opacity-40 font-bold">Unique Packages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="bg-surface/30 rounded-[60px] p-12 sm:p-24 relative overflow-hidden border border-white/5">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px]"></div>
+                
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-20 leading-tight">Why Choose <br><span class="text-primary">KNI Global Tours?</span></h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="space-y-6 text-center group">
+                        <div class="w-20 h-20 glass rounded-3xl mx-auto flex items-center justify-center text-4xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">🏆</div>
+                        <h3 class="font-display text-2xl font-bold">Local Expertise</h3>
+                        <p class="opacity-60 font-light">Native guides who know every hidden gem and secret story of their homeland.</p>
+                    </div>
+                    <div class="space-y-6 text-center group">
+                        <div class="w-20 h-20 glass rounded-3xl mx-auto flex items-center justify-center text-4xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">🌿</div>
+                        <h3 class="font-display text-2xl font-bold">Sustainable Travel</h3>
+                        <p class="opacity-60 font-light">We are committed to eco-friendly practices and supporting local communities directly.</p>
+                    </div>
+                    <div class="space-y-6 text-center group">
+                        <div class="w-20 h-20 glass rounded-3xl mx-auto flex items-center justify-center text-4xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">💬</div>
+                        <h3 class="font-display text-2xl font-bold">24/7 Support</h3>
+                        <p class="opacity-60 font-light">Our dedicated team is always just a call away, ensuring your safety and comfort.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-black pt-24 pb-12 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <!-- Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-center md:text-left">
+                <div class="space-y-8 flex flex-col items-center md:items-start">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <svg class="w-10 h-10 torii-gate" viewBox="0 0 50 50" fill="none"><path d="M10 45V20M40 45V20M5 20H45M8 15H42M15 20V12M35 20V12M15 12H35" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" /></svg>
+                        <span class="font-display text-2xl font-bold text-primary">KNI Global</span>
+                    </a>
+                </div>
+                <div><h4 class="font-display text-xl font-bold mb-8">Navigation</h4><ul class="space-y-4 opacity-50"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="packages.html">Packages</a></li></ul></div>
+                <div><h4 class="font-display text-xl font-bold mb-8">Support</h4><ul class="space-y-4 opacity-50"><li><a href="contact.html">Contact Us</a></li><li><a href="#">FAQ</a></li><li><a href="#">Privacy</a></li></ul></div>
+            </div>
+            <p class="text-center opacity-30 text-xs">© 2025 KNI Global Tours & Travels. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Packages | Collections - KNI Global Tours</title>
+    <meta name="description" content="Explore our handcrafted tour packages to Japan and India. Find your perfect adventure with KNI Global Tours.">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="bg-dark text-white overflow-x-hidden">
+
+    <!-- Header (Same as index.html) -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <a href="index.html" class="flex items-center gap-3">
+                    <svg class="w-10 h-10 torii-gate" viewBox="0 0 50 50" fill="none">
+                        <path d="M10 45V20M40 45V20M5 20H45M8 15H42M15 20V12M35 20V12M15 12H35" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                    <div>
+                        <span class="font-display text-2xl font-bold tracking-tight text-primary">KNI Global</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-10">
+                    <a href="index.html" class="nav-link font-medium text-sm tracking-wide">Home</a>
+                    <a href="about.html" class="nav-link font-medium text-sm tracking-wide">About Us</a>
+                    <a href="packages.html" class="nav-link active font-medium text-sm tracking-wide">Holiday Packages</a>
+                    <a href="themes.html" class="nav-link font-medium text-sm tracking-wide">Themes</a>
+                    <a href="blogs.html" class="nav-link font-medium text-sm tracking-wide">Travel Stories</a>
+                    <a href="contact.html" class="nav-link font-medium text-sm tracking-wide">Contact</a>
+                </nav>
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: #0f1419;">
+                        Plan Your Trip
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-[80px] z-40 bg-dark/95 backdrop-blur-xl">
+            <div class="px-6 py-12 space-y-6 flex flex-col items-center">
+                <a href="index.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">About Us</a>
+                <a href="packages.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Holiday Packages</a>
+                <a href="themes.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Themes</a>
+                <a href="blogs.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Travel Stories</a>
+                <a href="contact.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <section class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Handcrafted Collections</span>
+                <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">Explore Our <span class="italic text-primary">Tours</span></h1>
+                <p class="text-xl max-w-2xl mx-auto opacity-60 font-light">Choose from our curated selection of experiences designed for every type of traveler.</p>
+            </div>
+
+            <!-- Enhanced Filters -->
+            <div class="flex flex-wrap items-center justify-center gap-6 mb-20 bg-white/5 p-6 rounded-[30px] border border-white/5 backdrop-blur-md">
+                <button onclick="filterPackages('all')" class="filter-btn px-10 py-3 rounded-full font-bold text-sm tracking-widest uppercase transition-all shadow-xl bg-primary text-dark border-primary" style="background: var(--color-primary); color: #0f1419;">All Regions</button>
+                <button onclick="filterPackages('japan')" class="filter-btn px-10 py-3 rounded-full font-bold text-sm tracking-widest uppercase transition-all border border-white/20 hover:border-primary">🇯🇵 Japan Only</button>
+                <button onclick="filterPackages('india')" class="filter-btn px-10 py-3 rounded-full font-bold text-sm tracking-widest uppercase transition-all border border-white/20 hover:border-primary">🇮🇳 India Only</button>
+            </div>
+
+            <!-- Packages Grid -->
+            <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Data will be loaded normally, but I'll write some static cards for initial load/SEO and dynamic fallback -->
+                
+                <!-- Card Fragment (repeated for key packages) -->
+                <div class="package-card group cursor-pointer" data-destination="japan" onclick="showPackageDetail('japan-cherry')">
+                    <div class="h-[400px] relative rounded-[40px] overflow-hidden mb-8 shadow-2xl">
+                        <img src="assets/images/japan_cherry_blossom.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" alt="Sakura">
+                        <div class="img-overlay"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <span class="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">10 Days / 9 Nights</span>
+                            <h3 class="font-display text-3xl font-bold text-white mb-6">Cherry Blossom Discovery</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-primary">$1,999</span>
+                                <div class="glass p-3 rounded-2xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card group cursor-pointer" data-destination="india" onclick="showPackageDetail('india-holi')">
+                    <div class="h-[400px] relative rounded-[40px] overflow-hidden mb-8 shadow-2xl">
+                        <img src="assets/images/india_holi.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" alt="Holi India">
+                        <div class="img-overlay"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <span class="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">8 Days / 7 Nights</span>
+                            <h3 class="font-display text-3xl font-bold text-white mb-6">Festival of Colors India</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-primary">$1,299</span>
+                                <div class="glass p-3 rounded-2xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card group cursor-pointer" data-destination="japan" onclick="showPackageDetail('tokyo-kyoto')">
+                    <div class="h-[400px] relative rounded-[40px] overflow-hidden mb-8 shadow-2xl">
+                        <img src="assets/images/japan_hero.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" alt="Japan Tokyo">
+                        <div class="img-overlay"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <span class="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">8 Days / 7 Nights</span>
+                            <h3 class="font-display text-3xl font-bold text-white mb-6">Tokyo to Kyoto Discovery</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-primary">$1,899</span>
+                                <div class="glass p-3 rounded-2xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card group cursor-pointer" data-destination="india" onclick="showPackageDetail('golden-triangle')">
+                    <div class="h-[400px] relative rounded-[40px] overflow-hidden mb-8 shadow-2xl">
+                        <img src="assets/images/india_hero.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" alt="India Taj Mahal">
+                        <div class="img-overlay"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <span class="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">6 Days / 5 Nights</span>
+                            <h3 class="font-display text-3xl font-bold text-white mb-6">Golden Triangle Explorer</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-primary">$1,199</span>
+                                <div class="glass p-3 rounded-2xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card group cursor-pointer" data-destination="india" onclick="showPackageDetail('kerala')">
+                    <div class="h-[400px] relative rounded-[40px] overflow-hidden mb-8 shadow-2xl">
+                        <img src="assets/images/kerala.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" alt="Kerala Backwaters">
+                        <div class="img-overlay"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <span class="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">7 Days / 6 Nights</span>
+                            <h3 class="font-display text-3xl font-bold text-white mb-6">Kerala Backwater Bliss</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-primary">$1,399</span>
+                                <div class="glass p-3 rounded-2xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card group cursor-pointer" data-destination="japan" onclick="showPackageDetail('japan-alps')">
+                    <div class="h-[400px] relative rounded-[40px] overflow-hidden mb-8 shadow-2xl">
+                        <img src="assets/images/japan_alps.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" alt="Japan Alps">
+                        <div class="img-overlay"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <span class="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">10 Days / 9 Nights</span>
+                            <h3 class="font-display text-3xl font-bold text-white mb-6">Japanese Alps Adventure</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-primary">$2,499</span>
+                                <div class="glass p-3 rounded-2xl group-hover:bg-primary group-hover:text-dark transition-all duration-500">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Container -->
+    <div id="package-modal" class="fixed inset-0 z-[100] hidden overflow-hidden">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closePackageModal()"></div>
+        <div class="relative h-full overflow-y-auto pt-10 pb-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
+                <button onclick="closePackageModal()" class="absolute -top-4 right-4 z-[110] w-14 h-14 glass rounded-full flex items-center justify-center hover:scale-110 text-primary shadow-2xl pointer-events-auto">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <div id="modal-content" class="rounded-[40px] overflow-hidden bg-surface shadow-2xl relative">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-24 pb-12 border-t border-white/5 text-center">
+        <div class="container mx-auto px-6">
+            <p class="opacity-30 text-[10px] uppercase tracking-[0.4em]">© 2025 KNI Global Tours. Premium Handcrafted Journeys.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        // Specific init for packages page (handling URL params)
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dest = urlParams.get('dest');
+            if (dest) {
+                filterPackages(dest);
+            }
+        });
+    </script>
+</body>
+</html>
