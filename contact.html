@@ -14,17 +14,23 @@
 <body class="bg-dark text-white overflow-x-hidden">
 
     <!-- Header (Same as index.html) -->
+    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 sm:h-24">
-                <a href="index.html" class="flex items-center gap-3">
-                    <svg class="w-10 h-10 torii-gate" viewBox="0 0 50 50" fill="none">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <svg class="w-10 h-10 sm:w-12 sm:h-12 torii-gate" viewBox="0 0 50 50" fill="none">
                         <path d="M10 45V20M40 45V20M5 20H45M8 15H42M15 20V12M35 20V12M15 12H35" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" />
+                        <circle cx="25" cy="8" r="3" fill="var(--color-primary)" />
                     </svg>
                     <div>
-                        <span class="font-display text-2xl font-bold tracking-tight text-primary">KNI Global</span>
+                        <span class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-primary">KNI Global</span>
+                        <p class="text-[10px] uppercase tracking-[0.2em] opacity-60 font-medium">Global Tours & Travels</p>
                     </div>
                 </a>
+
+                <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center gap-10">
                     <a href="index.html" class="nav-link font-medium text-sm tracking-wide">Home</a>
                     <a href="about.html" class="nav-link font-medium text-sm tracking-wide">About Us</a>
@@ -33,9 +39,35 @@
                     <a href="blogs.html" class="nav-link font-medium text-sm tracking-wide">Travel Stories</a>
                     <a href="contact.html" class="nav-link active font-medium text-sm tracking-wide">Contact</a>
                 </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: #0f1419;">
+                        Plan Your Trip
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" onclick="toggleMobileMenu()">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-[80px] z-40 bg-dark/95 backdrop-blur-xl">
+            <div class="px-6 py-12 space-y-6 flex flex-col items-center">
+                <a href="index.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">About Us</a>
+                <a href="packages.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Holiday Packages</a>
+                <a href="themes.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Themes</a>
+                <a href="blogs.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Travel Stories</a>
+                <a href="contact.html" class="text-2xl font-display font-semibold hover:text-primary transition-colors">Contact</a>
+                <a href="contact.html" class="w-full mt-6 py-4 rounded-full font-bold text-center text-lg" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: #0f1419;">
+                    Plan Your Trip
+                </a>
             </div>
         </div>
     </header>
@@ -147,8 +179,78 @@
         </section>
     </main>
 
-    <footer class="bg-black py-16 border-t border-white/5 text-center opacity-30 text-[10px] uppercase tracking-[0.4em]">
-        © 2025 KNI Global Tours. Luxury Travel Reimagined.
+    <!-- Footer -->
+    <footer class="bg-black pt-24 pb-12 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div class="space-y-8">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <svg class="w-10 h-10 torii-gate" viewBox="0 0 50 50" fill="none">
+                            <path d="M10 45V20M40 45V20M5 20H45M8 15H42M15 20V12M35 20V12M15 12H35" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" />
+                        </svg>
+                        <span class="font-display text-2xl font-bold text-primary">KNI Global</span>
+                    </a>
+                    <p class="opacity-50 text-base font-light leading-relaxed">
+                        Leading the way in high-end experiential travel across Japan and India. We provide authentic connections to local cultures and traditions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center hover:bg-primary hover:text-dark transition-all">FB</a>
+                        <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center hover:bg-primary hover:text-dark transition-all">IG</a>
+                        <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center hover:bg-primary hover:text-dark transition-all">YT</a>
+                        <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center hover:bg-primary hover:text-dark transition-all">LI</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-8 tracking-wide">Quick Exploration</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Home</a></li>
+                        <li><a href="about.html" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Our Story</a></li>
+                        <li><a href="packages.html" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Handcrafted Packages</a></li>
+                        <li><a href="themes.html" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Travel Themes</a></li>
+                        <li><a href="blogs.html" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Travel Stories</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-8 tracking-wide">Destinations</h4>
+                    <ul class="space-y-4">
+                        <li><a href="packages.html?dest=japan" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">🇯🇵 Japan Collections</a></li>
+                        <li><a href="packages.html?dest=india" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">🇮🇳 India Collections</a></li>
+                        <li><a href="#" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Regional Highlights</a></li>
+                        <li><a href="#" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Festivall Calendar</a></li>
+                        <li><a href="#" class="opacity-50 hover:opacity-100 hover:text-primary transition-all">Custom Itinerary</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-8 tracking-wide">Get In Touch</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="text-primary mt-1">📍</span>
+                            <span class="opacity-50 text-sm">Shibuya Building 5F, Tokyo, Japan / <br>Connaught Place, New Delhi, India</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-primary">📞</span>
+                            <span class="opacity-50 text-sm">+1 234 567 8900</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-primary">📧</span>
+                            <span class="opacity-50 text-sm uppercase tracking-wider">info@kniglobaltours.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[10px] uppercase tracking-[0.2em]">
+                <p>&copy; 2025 KNI Global Tours & Travels. All Rights Reserved.</p>
+                <div class="flex gap-10">
+                    <a href="#" class="hover:text-primary transition-all">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-all">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-all">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="js/common.js"></script>

@@ -117,11 +117,11 @@ function closePackageModal() {
 
 // Search functionality
 function searchPackages() {
-    const from = document.getElementById('search-from').value;
-    const dest = document.getElementById('search-destination').value;
-    const theme = document.getElementById('search-theme').value;
-    const month = document.getElementById('search-month').value;
-    const budget = document.getElementById('search-budget').value;
+    const from = document.getElementById('search-from')?.value || '';
+    const dest = document.getElementById('search-destination')?.value || '';
+    const theme = document.getElementById('search-theme')?.value || '';
+    const month = document.getElementById('search-month')?.value || '';
+    const budget = document.getElementById('search-budget')?.value || '';
     
     const params = new URLSearchParams({
         from, dest, theme, month, budget
@@ -181,9 +181,8 @@ function filterPackages(destination) {
     const buttons = document.querySelectorAll('.filter-btn');
     
     buttons.forEach(btn => {
-        btn.classList.remove('bg-primary', 'text-dark');
         btn.style.background = 'transparent';
-        btn.style.color = 'var(--color-text)';
+        btn.style.color = 'white';
         btn.style.borderColor = 'rgba(212, 165, 116, 0.3)';
     });
     
